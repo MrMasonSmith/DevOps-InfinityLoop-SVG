@@ -5,12 +5,24 @@
 
 .devops-container {
     position: relative;
-    width: 1050px;
+    width: 1000px;
     height: 566px;
     display: flex;
     justify-content: center;
     align-items: center;
     background:rgb(150, 150, 150);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .devops-container > svg:nth-child(1) {
@@ -128,4 +140,43 @@ path {
     fill:var(--ops-color);
     stroke: #ffffff;
     stroke-width: 80px;
+}
+
+@media screen and (max-width: 1050px) {
+    .devops-container {
+        width: 100vw;
+        height: calc(100vw * 0.539);
+    }
+    
+    .devops-container svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Scale stroke widths proportionally */
+    .dev-circle,
+    .ops-circle {
+        stroke-width: calc(40px * (100vw/1050));
+    }
+
+    .dev:hover,
+    .ops:hover,
+    .plan:hover,
+    .code:hover,
+    .build:hover,
+    .test:hover,
+    .release:hover,
+    .deploy:hover,
+    .operate:hover,
+    .monitor:hover {
+        stroke-width: calc(80px * (100vw/1050));
+    }
+}
+
+/* Minimum size limit */
+@media screen and (max-width: 500px) {
+    .devops-container {
+        min-width: 500px;
+        min-height: 269px;
+    }
 }
