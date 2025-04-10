@@ -1,0 +1,131 @@
+:root {
+    --dev-color: #69cbff;
+    --ops-color: #f29a25;
+}
+
+.devops-container {
+    position: relative;
+    width: 1050px;
+    height: 566px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgb(150, 150, 150);
+}
+
+.devops-container > svg:nth-child(1) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    z-index: 2;
+}
+
+.devops-container > svg:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    z-index: 1;
+}
+
+.devops-container > svg:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.devops-container > svg:nth-child(3) path {
+    fill: rgb(255, 255, 255);
+    stroke: rgba(255, 0, 0, 0.2);
+    stroke-width: 1;
+    pointer-events: none;
+}
+
+.dev-circle {
+    fill: var(--dev-color);
+    stroke: #ffffff;
+    stroke-width: 40px;
+    transition: all 0.3s ease;
+}
+
+.dev:hover {
+    fill: #ffffff;
+    stroke: var(--dev-color);
+    stroke-width: 80px;
+    filter: drop-shadow(0 0 10px var(--dev-color));
+}
+
+.ops-circle {
+    fill: var(--ops-color);
+    stroke: #ffffff;
+    stroke-width: 40px;
+    transition: all 0.3s ease;
+}
+
+.ops:hover {
+    fill: #ffffff;
+    stroke: var(--ops-color);
+    stroke-width: 80px;
+    filter: drop-shadow(0 0 10px var(--ops-color));
+}
+
+path {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    fill: #000000;
+}
+
+.plan:hover {
+    fill: var(--dev-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.code:hover {
+    fill: var(--dev-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.build:hover {
+    fill: var(--dev-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.test:hover {
+    fill: var(--dev-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.release:hover {
+    fill: var(--ops-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.deploy:hover {
+    fill:var(--ops-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.operate:hover {
+    fill:var(--ops-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
+
+.monitor:hover {
+    fill:var(--ops-color);
+    stroke: #ffffff;
+    stroke-width: 80px;
+}
