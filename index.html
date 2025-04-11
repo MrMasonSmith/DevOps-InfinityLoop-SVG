@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>DevOps Infinity Loop</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -301,8 +302,78 @@
             </g>
         </svg>
 
-
     </div>
+
+    <div class="info-container" id="info-container" style="display:none;">
+        <h3 id="info-title"></h3>
+        <p id="info-description"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            // Mapping for each DevOps process part
+            const infoData = {
+                code: {
+                    title: "Code",
+                    description: "Development involves writing and maintaining source code, version control, and collaborative coding practices."
+                },
+                deploy: {
+                    title: "Deploy",
+                    description: "Deployment refers to releasing the application into production with a focus on automation and error-free delivery."
+                },
+                plan: {
+                    title: "Plan",
+                    description: "Planning is all about defining requirements, setting goals, and designing roadmaps for development and operations."
+                },
+                release: {
+                    title: "Release",
+                    description: "Release activities include final quality assurance, packaging, and providing the application for end users."
+                },
+                test: {
+                    title: "Test",
+                    description: "Testing ensures quality by verifying the functionality, performance, and reliability of the application."
+                },
+                build: {
+                    title: "Build",
+                    description: "Building means compiling and assembling the code, assets, and dependencies into deployable units."
+                },
+                operate: {
+                    title: "Operate",
+                    description: "Operations cover ongoing support, system management, and handling infrastructure tasks once deployed."
+                },
+                monitor: {
+                    title: "Monitor",
+                    description: "Monitoring involves tracking system performance, logging events, and ensuring the reliability and uptime of services."
+                }
+            };
+        
+            // Get the info container and its child elements
+            const infoContainer = document.getElementById("info-container");
+            const infoTitle = document.getElementById("info-title");
+            const infoDescription = document.getElementById("info-description");
+        
+            // List of keys in infoData corresponds to the class names on your SVG paths
+            const processClasses = Object.keys(infoData);
+        
+            // For each process part, select the corresponding elements and attach event listeners
+            processClasses.forEach(function(procClass) {
+                const elements = document.querySelectorAll(".devops-container ." + procClass);
+                elements.forEach(function(element) {
+                    element.addEventListener("mouseenter", function() {
+                        // Update the info container with corresponding data
+                        const data = infoData[procClass];
+                        infoTitle.textContent = data.title;
+                        infoDescription.textContent = data.description;
+                        infoContainer.style.display = "block";
+                    });
+                    element.addEventListener("mouseleave", function() {
+                        infoContainer.style.display = "none";
+                    });
+                });
+            });
+        });
+    </script>
+        
 
 </body>
 

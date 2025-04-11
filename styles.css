@@ -8,13 +8,13 @@
 .devops-container {
     position: relative;
     width: 1000px;
-    height: 566px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
     margin: 0;
     padding: 0;
+    background-color: var(--Transparent-Glass);
 }
 
 body {
@@ -80,6 +80,19 @@ path {
     fill:var(--Transparent-Glass);
 }
 
+.info-container {
+    position: absolute;
+    margin-top: 420px;
+    background: var(--Transparent-Glass);
+    border: 2px solid var(--pill-border-radius);
+    border-radius: 25px;
+    padding: 10px;
+    z-index: 3;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
 .plan:hover {
     fill: var(--dev-color);
     stroke: var(--pill-border-radius);
@@ -130,8 +143,9 @@ path {
 
 @media screen and (max-width: 1050px) {
     .devops-container {
-        width: 100vw;
-        height: calc(100vw * 0.539);
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1000 / 700;
     }
     
     .devops-container svg {
@@ -159,10 +173,71 @@ path {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .devops-container {
+      width: 100%;
+      max-width: 768px;
+      height: 400px;
+      aspect-ratio: 1000 / 700;
+      margin: 0 auto;
+    }
+  
+    .info-container {
+      position: absolute;
+      margin-top: 60px;
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+    }
+  
+    .dev-circle,
+    .ops-circle {
+      stroke-width: calc(40px * (100vw / 768));
+    }
+    
+    .plan:hover,
+    .code:hover,
+    .build:hover,
+    .test:hover,
+    .release:hover,
+    .deploy:hover,
+    .operate:hover,
+    .monitor:hover {
+      stroke-width: calc(80px * (100vw / 768));
+    }
+}
+
 /* Minimum size limit */
 @media screen and (max-width: 500px) {
     .devops-container {
-        min-width: 500px;
-        min-height: 269px;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 1000 / 700;
+        margin: 0 auto;
+    }
+    
+    .info-container {
+        position: absolute;
+        margin-top: 420px;
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+    }
+    
+    .dev-circle,
+    .ops-circle {
+        stroke-width: calc(40px * (100vw / 500));
+    }
+      
+    .plan:hover,
+    .code:hover,
+    .build:hover,
+    .test:hover,
+    .release:hover,
+    .deploy:hover,
+    .operate:hover,
+    .monitor:hover {
+        stroke-width: calc(80px * (100vw / 500));
     }
 }
