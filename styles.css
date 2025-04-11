@@ -1,6 +1,8 @@
 :root {
     --dev-color: #69cbff;
     --ops-color: #f29a25;
+    --Transparent-Glass: rgba(0, 0, 0, 0.3);
+    --pill-border-radius: black;
 }
 
 .devops-container {
@@ -10,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background:rgb(150, 150, 150);
+    background: transparent;
     margin: 0;
     padding: 0;
 }
@@ -62,84 +64,68 @@ body {
 
 .dev-circle {
     fill: var(--dev-color);
-    stroke: #ffffff;
+    stroke: var(--pill-border-radius);
     stroke-width: 40px;
-    transition: all 0.3s ease;
-}
-
-.dev:hover {
-    fill: #ffffff;
-    stroke: var(--dev-color);
-    stroke-width: 80px;
-    filter: drop-shadow(0 0 10px var(--dev-color));
 }
 
 .ops-circle {
     fill: var(--ops-color);
-    stroke: #ffffff;
+    stroke: var(--pill-border-radius);
     stroke-width: 40px;
-    transition: all 0.3s ease;
-}
-
-.ops:hover {
-    fill: #ffffff;
-    stroke: var(--ops-color);
-    stroke-width: 80px;
-    filter: drop-shadow(0 0 10px var(--ops-color));
 }
 
 path {
     transition: all 0.3s ease;
     cursor: pointer;
-    fill: #000000;
+    fill:var(--Transparent-Glass);
 }
 
 .plan:hover {
     fill: var(--dev-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .code:hover {
     fill: var(--dev-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .build:hover {
     fill: var(--dev-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .test:hover {
     fill: var(--dev-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .release:hover {
     fill: var(--ops-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .deploy:hover {
     fill:var(--ops-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .operate:hover {
     fill:var(--ops-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 .monitor:hover {
     fill:var(--ops-color);
-    stroke: #ffffff;
-    stroke-width: 80px;
+    stroke: var(--pill-border-radius);
+    stroke-width: 40px;
 }
 
 @media screen and (max-width: 1050px) {
